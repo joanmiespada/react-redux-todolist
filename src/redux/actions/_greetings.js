@@ -40,7 +40,8 @@ function getGreeting(inputMessage) {
     });
   };
 }
-
+/*
 module.exports = {
   getGreeting,
 };
+*/

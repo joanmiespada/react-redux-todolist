@@ -12,8 +12,11 @@ import Footer from './common/footer';
 
 /* Pages */
 
-import Home from './routes/Home';
-import Home2 from './routes/Home2';
+//import Home from './routes/Home';
+//import Home2 from './routes/Home2';
+
+import AllTodos from './routes/AllTodos';
+import EditTodo from './routes/EditTodo';
 
 class App extends React.Component {
   render() {
@@ -35,12 +38,19 @@ class App extends React.Component {
     );
   }
 }
-
+/*
 const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={Home} />
     <Route path='/home2' component={Home2} />
   </Route>
 );
+*/
+//export default routes;
 
-export default routes;
+export default (
+  <Route path='/' component={App}>
+	<IndexRoute component={AllTodos} />
+	<Route path='/todo/edit/:id' component={EditTodo} />
+  </Route>
+);

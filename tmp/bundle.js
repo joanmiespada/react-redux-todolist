@@ -54,7 +54,7 @@ require('source-map-support').install({environment: 'node'});
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(170);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(592);var _RubixAssetMiddleware=__webpack_require__(613);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(614);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(617);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','/Users/joanmi/Projects/rubix-redux-todolist/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','/Users/joanmi/Projects/rubix-redux-todolist/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','/Users/joanmi/Projects/rubix-redux-todolist/server.babel.js');}();;
+	'use strict';var _stringify=__webpack_require__(2);var _stringify2=_interopRequireDefault(_stringify);var _path=__webpack_require__(5);var _path2=_interopRequireDefault(_path);var _express=__webpack_require__(6);var _express2=_interopRequireDefault(_express);var _compression=__webpack_require__(7);var _compression2=_interopRequireDefault(_compression);var _cookieParser=__webpack_require__(8);var _cookieParser2=_interopRequireDefault(_cookieParser);var _expressGraphql=__webpack_require__(9);var _expressGraphql2=_interopRequireDefault(_expressGraphql);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _server=__webpack_require__(11);var _server2=_interopRequireDefault(_server);var _routes=__webpack_require__(170);var _routes2=_interopRequireDefault(_routes);var _reduxRouter=__webpack_require__(594);var _RubixAssetMiddleware=__webpack_require__(615);var _RubixAssetMiddleware2=_interopRequireDefault(_RubixAssetMiddleware);var _schema=__webpack_require__(616);var _schema2=_interopRequireDefault(_schema);var _reducers=__webpack_require__(631);var _reducers2=_interopRequireDefault(_reducers);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}(0,_reduxRouter.setupReducers)(_reducers2.default);var port=process.env.PORT||8080;var app=(0,_express2.default)();app.use((0,_compression2.default)());app.use((0,_cookieParser2.default)());app.use(_express2.default.static(_path2.default.join(process.cwd(),'public')));app.set('views',_path2.default.join(process.cwd(),'views'));app.set('view engine','pug');function renderHTML(req,res){(0,_reduxRouter.renderHTMLString)(_routes2.default,req,function(error,redirectLocation,data){if(error){if(error.message==='Not found'){res.status(404).send(error.message);}else{res.status(500).send(error.message);}}else if(redirectLocation){res.redirect(302,redirectLocation.pathname+redirectLocation.search);}else{res.render('index',{content:data.content,data:(0,_stringify2.default)(data.data).replace(/\//g,'\\/')});}});}app.use('/graphql',(0,_expressGraphql2.default)({schema:_schema2.default,pretty:true,graphiql:true}));app.get('*',(0,_RubixAssetMiddleware2.default)('ltr'),function(req,res,next){renderHTML(req,res);});app.listen(port,function(){console.log('Node.js app is running at http://localhost:'+port+'/');});;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(port,'port','/Users/joanmi/Projects/rubix-redux-todolist/server.babel.js');__REACT_HOT_LOADER__.register(app,'app','/Users/joanmi/Projects/rubix-redux-todolist/server.babel.js');__REACT_HOT_LOADER__.register(renderHTML,'renderHTML','/Users/joanmi/Projects/rubix-redux-todolist/server.babel.js');}();;
 
 /***/ },
 /* 2 */
@@ -19732,7 +19732,17 @@ require('source-map-support').install({environment: 'node'});
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _classnames=__webpack_require__(248);var _classnames2=_interopRequireDefault(_classnames);var _reactRouter=__webpack_require__(249);var _rubix=__webpack_require__(250);var _sidebar=__webpack_require__(580);var _sidebar2=_interopRequireDefault(_sidebar);var _header=__webpack_require__(581);var _header2=_interopRequireDefault(_header);var _footer=__webpack_require__(582);var _footer2=_interopRequireDefault(_footer);var _Home=__webpack_require__(583);var _Home2=_interopRequireDefault(_Home);var _Home3=__webpack_require__(591);var _Home4=_interopRequireDefault(_Home3);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/* Pages */var App=function(_React$Component){(0,_inherits3.default)(App,_React$Component);function App(){(0,_classCallCheck3.default)(this,App);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}App.prototype.render=function render(){return _react2.default.createElement(_rubix.MainContainer,this.props,_react2.default.createElement(_sidebar2.default,null),_react2.default.createElement(_header2.default,null),_react2.default.createElement('div',{id:'body'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},this.props.children)))),_react2.default.createElement(_footer2.default,null));};return App;}(_react2.default.Component);/* Common Components */var routes=_react2.default.createElement(_reactRouter.Route,{path:'/',component:App},_react2.default.createElement(_reactRouter.IndexRoute,{component:_Home2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/home2',component:_Home4.default}));var _default=routes;exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(App,'App','/Users/joanmi/Projects/rubix-redux-todolist/src/routes.js');__REACT_HOT_LOADER__.register(routes,'routes','/Users/joanmi/Projects/rubix-redux-todolist/src/routes.js');__REACT_HOT_LOADER__.register(_default,'default','/Users/joanmi/Projects/rubix-redux-todolist/src/routes.js');}();;
+	'use strict';exports.__esModule=true;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _classnames=__webpack_require__(248);var _classnames2=_interopRequireDefault(_classnames);var _reactRouter=__webpack_require__(249);var _rubix=__webpack_require__(250);var _sidebar=__webpack_require__(580);var _sidebar2=_interopRequireDefault(_sidebar);var _header=__webpack_require__(581);var _header2=_interopRequireDefault(_header);var _footer=__webpack_require__(582);var _footer2=_interopRequireDefault(_footer);var _AllTodos=__webpack_require__(583);var _AllTodos2=_interopRequireDefault(_AllTodos);var _EditTodo=__webpack_require__(593);var _EditTodo2=_interopRequireDefault(_EditTodo);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/* Pages *///import Home from './routes/Home';
+	//import Home2 from './routes/Home2';
+	var App=function(_React$Component){(0,_inherits3.default)(App,_React$Component);function App(){(0,_classCallCheck3.default)(this,App);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}App.prototype.render=function render(){return _react2.default.createElement(_rubix.MainContainer,this.props,_react2.default.createElement(_sidebar2.default,null),_react2.default.createElement(_header2.default,null),_react2.default.createElement('div',{id:'body'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},this.props.children)))),_react2.default.createElement(_footer2.default,null));};return App;}(_react2.default.Component);/*
+	const routes = (
+	  <Route path='/' component={App}>
+	    <IndexRoute component={Home} />
+	    <Route path='/home2' component={Home2} />
+	  </Route>
+	);
+	*///export default routes;
+	/* Common Components */var _default=_react2.default.createElement(_reactRouter.Route,{path:'/',component:App},_react2.default.createElement(_reactRouter.IndexRoute,{component:_AllTodos2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/todo/edit/:id',component:_EditTodo2.default}));exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(App,'App','/Users/joanmi/Projects/rubix-redux-todolist/src/routes.js');__REACT_HOT_LOADER__.register(_default,'default','/Users/joanmi/Projects/rubix-redux-todolist/src/routes.js');}();;
 
 /***/ },
 /* 171 */
@@ -47811,7 +47821,7 @@ require('source-map-support').install({environment: 'node'});
 /* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _class,_class2;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _rubix=__webpack_require__(250);var _reactRouter=__webpack_require__(249);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var ApplicationSidebar=(0,_reactRouter.withRouter)(_class=function(_React$Component){(0,_inherits3.default)(ApplicationSidebar,_React$Component);function ApplicationSidebar(){(0,_classCallCheck3.default)(this,ApplicationSidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}ApplicationSidebar.prototype.handleChange=function handleChange(e){this._nav.search(e.target.value);};ApplicationSidebar.prototype.render=function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement(_rubix.FormControl,{type:'text',placeholder:'Search...',onChange:this.handleChange.bind(this),className:'sidebar-search',style:{border:'none',background:'none',margin:'10px 0 0 0',borderBottom:'1px solid #666',color:'white'}}),_react2.default.createElement('div',{className:'sidebar-nav-container'},_react2.default.createElement(_rubix.SidebarNav,{style:{marginBottom:0},ref:function ref(c){return _this2._nav=c;}},_react2.default.createElement('div',{className:'sidebar-header'},'PAGES'),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-fontello-gauge',name:'Home',href:'/'}),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-fontello-gauge',name:'Home 2',href:'/home2'})))))));};return ApplicationSidebar;}(_react2.default.Component))||_class;var DummySidebar=function(_React$Component2){(0,_inherits3.default)(DummySidebar,_React$Component2);function DummySidebar(){(0,_classCallCheck3.default)(this,DummySidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}DummySidebar.prototype.render=function render(){return _react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('div',{className:'sidebar-header'},'DUMMY SIDEBAR'),_react2.default.createElement(_rubix.LoremIpsum,{query:'1p'}))));};return DummySidebar;}(_react2.default.Component);var SidebarContainer=(0,_reactRouter.withRouter)(_class2=function(_React$Component3){(0,_inherits3.default)(SidebarContainer,_React$Component3);function SidebarContainer(){(0,_classCallCheck3.default)(this,SidebarContainer);return(0,_possibleConstructorReturn3.default)(this,_React$Component3.apply(this,arguments));}SidebarContainer.prototype.render=function render(){return _react2.default.createElement('div',{id:'sidebar'},_react2.default.createElement('div',{id:'avatar'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,{className:'fg-white'},_react2.default.createElement(_rubix.Col,{xs:4,collapseRight:true},_react2.default.createElement('img',{src:'/imgs/app/avatars/avatar0.png',width:'40',height:'40'})),_react2.default.createElement(_rubix.Col,{xs:8,collapseLeft:true,id:'avatar-col'},_react2.default.createElement('div',{style:{top:23,fontSize:16,lineHeight:1,position:'relative'}},'Anna Sanchez'),_react2.default.createElement('div',null,_react2.default.createElement(_rubix.Progress,{id:'demo-progress',value:30,color:'#ffffff'}),_react2.default.createElement('a',{href:'#'},_react2.default.createElement(_rubix.Icon,{id:'demo-icon',bundle:'fontello',glyph:'lock-5'}))))))),_react2.default.createElement(_rubix.SidebarControls,null,_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'docs',sidebar:0}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chat-1',sidebar:1}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chart-pie-2',sidebar:2}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'th-list-2',sidebar:3}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'bell-5',sidebar:4})),_react2.default.createElement('div',{id:'sidebar-container'},_react2.default.createElement(_rubix.Sidebar,{sidebar:0},_react2.default.createElement(ApplicationSidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:1},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:2},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:3},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:4},_react2.default.createElement(DummySidebar,null))));};return SidebarContainer;}(_react2.default.Component))||_class2;exports.default=SidebarContainer;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(ApplicationSidebar,'ApplicationSidebar','/Users/joanmi/Projects/rubix-redux-todolist/src/common/sidebar.js');__REACT_HOT_LOADER__.register(DummySidebar,'DummySidebar','/Users/joanmi/Projects/rubix-redux-todolist/src/common/sidebar.js');__REACT_HOT_LOADER__.register(SidebarContainer,'SidebarContainer','/Users/joanmi/Projects/rubix-redux-todolist/src/common/sidebar.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _class,_class2;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _rubix=__webpack_require__(250);var _reactRouter=__webpack_require__(249);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var ApplicationSidebar=(0,_reactRouter.withRouter)(_class=function(_React$Component){(0,_inherits3.default)(ApplicationSidebar,_React$Component);function ApplicationSidebar(){(0,_classCallCheck3.default)(this,ApplicationSidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}ApplicationSidebar.prototype.handleChange=function handleChange(e){this._nav.search(e.target.value);};ApplicationSidebar.prototype.render=function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement(_rubix.FormControl,{type:'text',placeholder:'Search...',onChange:this.handleChange.bind(this),className:'sidebar-search',style:{border:'none',background:'none',margin:'10px 0 0 0',borderBottom:'1px solid #666',color:'white'}}),_react2.default.createElement('div',{className:'sidebar-nav-container'},_react2.default.createElement(_rubix.SidebarNav,{style:{marginBottom:0},ref:function ref(c){return _this2._nav=c;}},_react2.default.createElement('div',{className:'sidebar-header'},'PAGES'),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-outlined-todolist',name:'All Todos',href:'/'}),_react2.default.createElement(_rubix.SidebarNavItem,{glyph:'icon-outlined-pencil',name:'Edit Todo',href:'/todo/edit/:id'})))))));};return ApplicationSidebar;}(_react2.default.Component))||_class;var DummySidebar=function(_React$Component2){(0,_inherits3.default)(DummySidebar,_React$Component2);function DummySidebar(){(0,_classCallCheck3.default)(this,DummySidebar);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}DummySidebar.prototype.render=function render(){return _react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('div',{className:'sidebar-header'},'DUMMY SIDEBAR'),_react2.default.createElement(_rubix.LoremIpsum,{query:'1p'}))));};return DummySidebar;}(_react2.default.Component);var SidebarContainer=(0,_reactRouter.withRouter)(_class2=function(_React$Component3){(0,_inherits3.default)(SidebarContainer,_React$Component3);function SidebarContainer(){(0,_classCallCheck3.default)(this,SidebarContainer);return(0,_possibleConstructorReturn3.default)(this,_React$Component3.apply(this,arguments));}SidebarContainer.prototype.render=function render(){return _react2.default.createElement('div',{id:'sidebar'},_react2.default.createElement('div',{id:'avatar'},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,{className:'fg-white'},_react2.default.createElement(_rubix.Col,{xs:4,collapseRight:true},_react2.default.createElement('img',{src:'/imgs/app/avatars/avatar0.png',width:'40',height:'40'})),_react2.default.createElement(_rubix.Col,{xs:8,collapseLeft:true,id:'avatar-col'},_react2.default.createElement('div',{style:{top:23,fontSize:16,lineHeight:1,position:'relative'}},'Anna Sanchez'),_react2.default.createElement('div',null,_react2.default.createElement(_rubix.Progress,{id:'demo-progress',value:30,color:'#ffffff'}),_react2.default.createElement('a',{href:'#'},_react2.default.createElement(_rubix.Icon,{id:'demo-icon',bundle:'fontello',glyph:'lock-5'}))))))),_react2.default.createElement(_rubix.SidebarControls,null,_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'docs',sidebar:0}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chat-1',sidebar:1}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'chart-pie-2',sidebar:2}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'th-list-2',sidebar:3}),_react2.default.createElement(_rubix.SidebarControlBtn,{bundle:'fontello',glyph:'bell-5',sidebar:4})),_react2.default.createElement('div',{id:'sidebar-container'},_react2.default.createElement(_rubix.Sidebar,{sidebar:0},_react2.default.createElement(ApplicationSidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:1},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:2},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:3},_react2.default.createElement(DummySidebar,null)),_react2.default.createElement(_rubix.Sidebar,{sidebar:4},_react2.default.createElement(DummySidebar,null))));};return SidebarContainer;}(_react2.default.Component))||_class2;exports.default=SidebarContainer;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(ApplicationSidebar,'ApplicationSidebar','/Users/joanmi/Projects/rubix-redux-todolist/src/common/sidebar.js');__REACT_HOT_LOADER__.register(DummySidebar,'DummySidebar','/Users/joanmi/Projects/rubix-redux-todolist/src/common/sidebar.js');__REACT_HOT_LOADER__.register(SidebarContainer,'SidebarContainer','/Users/joanmi/Projects/rubix-redux-todolist/src/common/sidebar.js');}();;
 
 /***/ },
 /* 581 */
@@ -47829,7 +47839,7 @@ require('source-map-support').install({environment: 'node'});
 /* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(584);var _actions=__webpack_require__(585);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getGreeting('Hello, World! joanmi'));};Home.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,this.props.greetings.hello)))))));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','/Users/joanmi/Projects/rubix-redux-todolist/src/routes/Home.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(584);var _actions=__webpack_require__(585);var _actions2=_interopRequireDefault(_actions);var _Todo=__webpack_require__(591);var _Todo2=_interopRequireDefault(_Todo);var _TodoForm=__webpack_require__(592);var _TodoForm2=_interopRequireDefault(_TodoForm);var _rubix=__webpack_require__(250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var AllTodos=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(AllTodos,_React$Component);function AllTodos(){(0,_classCallCheck3.default)(this,AllTodos);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}AllTodos.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getTodos());};AllTodos.prototype.render=function render(){var _props=this.props,todos=_props.todos,dispatch=_props.dispatch;var result=todos.result,error=todos.error;var errors=error?_react2.default.createElement(_rubix.Alert,{danger:true,dismissible:true},error.map(function(_ref,i){var message=_ref.message;return _react2.default.createElement('div',{key:i},message);})):null;return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,{style:{padding:0,paddingBottom:25}},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('h3',null,'Todo List:'),errors,_react2.default.createElement(_TodoForm2.default,{dispatch:dispatch,actions:_actions2.default}),typeof result.map==='function'&&result.map(function(todo){return _react2.default.createElement(_Todo2.default,{key:todo._id,todo:todo,dispatch:dispatch,actions:_actions2.default});})))))));};return AllTodos;}(_react2.default.Component))||_class);exports.default=AllTodos;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(AllTodos,'AllTodos','/Users/joanmi/Projects/rubix-redux-todolist/src/routes/AllTodos.js');}();;
 
 /***/ },
 /* 584 */
@@ -47841,27 +47851,26 @@ require('source-map-support').install({environment: 'node'});
 /* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _extends2=__webpack_require__(252);var _extends3=_interopRequireDefault(_extends2);var _greetings=__webpack_require__(586);var _greetings2=_interopRequireDefault(_greetings);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_greetings2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+	'use strict';var _extends2=__webpack_require__(252);var _extends3=_interopRequireDefault(_extends2);var _todos=__webpack_require__(586);var _todos2=_interopRequireDefault(_todos);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_todos2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ },
 /* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _actionTypes=__webpack_require__(587);var _axios=__webpack_require__(589);var _axios2=_interopRequireDefault(_axios);var _graphql=__webpack_require__(590);var _graphql2=_interopRequireDefault(_graphql);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GraphQLEndpoint=_graphql2.default.development.endpoint;if(false){GraphQLEndpoint=_graphql2.default.production.endpoint;}function getGreeting(inputMessage){var query='\n    query echoGreeting($inputMessage: String) {\n      greetings {\n        hello(message: $inputMessage)\n      }\n    }\n  ';var variables={inputMessage:inputMessage};return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){dispatch({type:_actionTypes.GET_GREETING,result:result.data});}).catch(function(error){dispatch({type:_actionTypes.GET_GREETING,error:error});});};}module.exports={getGreeting:getGreeting};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(GraphQLEndpoint,'GraphQLEndpoint','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/greetings.js');__REACT_HOT_LOADER__.register(getGreeting,'getGreeting','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/greetings.js');}();;
+	'use strict';var _actionTypes=__webpack_require__(587);var _axios=__webpack_require__(589);var _axios2=_interopRequireDefault(_axios);var _graphql=__webpack_require__(590);var _graphql2=_interopRequireDefault(_graphql);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GraphQLEndpoint=_graphql2.default.development.endpoint;if(false){GraphQLEndpoint=_graphql2.default.production.endpoint;}function getTodos(){var query='\n\tquery getTodos {\n\t  todos {\n\t\t_id\n\t\ttodo\n\t\tcompleted\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.ALL_TODOS,error:result.data.errors});return;}dispatch({type:_actionTypes.ALL_TODOS,result:result.data.data.todos});});};}function getTodo(variables){var query='\n\tquery getTodo($_id: String!) {\n\t  todo(_id: $_id) {\n\t\t_id\n\t\ttodo\n\t\tcompleted\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.SINGLE_TODO,error:result.data.errors});return;}dispatch({type:_actionTypes.SINGLE_TODO,result:result.data.data.todo});});};}function createTodo(variables){var query='\n\tmutation createTodoMutation($todo: String!) {\n\t  createTodo(todo: $todo) {\n\t\t_id\n\t\ttodo\n\t\tcompleted\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.CREATE_TODO,error:result.data.errors});return;}dispatch({type:_actionTypes.CREATE_TODO,result:result.data.data.createTodo});});};}function updateTodo(variables){var query='\n\tmutation updateTodoMutation($_id: String!, $todo: String, $completed: Boolean) {\n\t  updateTodo(_id: $_id, todo: $todo, completed: $completed) {\n\t\t_id\n\t\ttodo\n\t\tcompleted\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.EDIT_TODO,error:result.data.errors});return;}dispatch({type:_actionTypes.EDIT_TODO,result:result.data.data.updateTodo});});};}function removeTodo(variables){var query='\n\tmutation removeTodoMutation($_id: String!) {\n\t  removeTodo(_id: $_id) {\n\t\t_id\n\t  }\n\t}\n  ';return function(dispatch){return _axios2.default.post(GraphQLEndpoint,{query:query,variables:variables}).then(function(result){if(result.data.errors){dispatch({type:_actionTypes.REMOVE_TODO,error:result.data.errors});return;}dispatch({type:_actionTypes.REMOVE_TODO,result:result.data.data.removeTodo});});};}module.exports={getTodo:getTodo,getTodos:getTodos,createTodo:createTodo,updateTodo:updateTodo,removeTodo:removeTodo};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(GraphQLEndpoint,'GraphQLEndpoint','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/todos.js');__REACT_HOT_LOADER__.register(getTodos,'getTodos','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/todos.js');__REACT_HOT_LOADER__.register(getTodo,'getTodo','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/todos.js');__REACT_HOT_LOADER__.register(createTodo,'createTodo','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/todos.js');__REACT_HOT_LOADER__.register(updateTodo,'updateTodo','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/todos.js');__REACT_HOT_LOADER__.register(removeTodo,'removeTodo','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/actions/todos.js');}();;
 
 /***/ },
 /* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _extends2=__webpack_require__(252);var _extends3=_interopRequireDefault(_extends2);var _greetings=__webpack_require__(588);var _greetings2=_interopRequireDefault(_greetings);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_greetings2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+	'use strict';var _extends2=__webpack_require__(252);var _extends3=_interopRequireDefault(_extends2);var _todos=__webpack_require__(588);var _todos2=_interopRequireDefault(_todos);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_todos2.default);//import greetings from './greetings';
+	;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ },
 /* 588 */
 /***/ function(module, exports) {
 
-	'use strict';/*
-	 * action types
-	 */module.exports={GET_GREETING:'GET_GREETING'};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+	'use strict';module.exports={ALL_TODOS:'ALL_TODOS',EDIT_TODO:'EDIT_TODO',CREATE_TODO:'CREATE_TODO',REMOVE_TODO:'REMOVE_TODO',SINGLE_TODO:'SINGLE_TODO'};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
 
 /***/ },
 /* 589 */
@@ -47886,10 +47895,22 @@ require('source-map-support').install({environment: 'node'});
 /* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _dec,_class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(584);var _actions=__webpack_require__(585);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Home=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class=function(_React$Component){(0,_inherits3.default)(Home,_React$Component);function Home(){(0,_classCallCheck3.default)(this,Home);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Home.fetchData=function fetchData(store){return store.dispatch(_actions2.default.getGreeting('Greetings from Rubix :)'));};Home.prototype.render=function render(){return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,null,_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('p',null,this.props.greetings.hello)))))));};return Home;}(_react2.default.Component))||_class);exports.default=Home;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Home,'Home','/Users/joanmi/Projects/rubix-redux-todolist/src/routes/Home2.js');}();;
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _class;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactRouter=__webpack_require__(249);var _rubix=__webpack_require__(250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var Todo=(0,_reactRouter.withRouter)(_class=function(_React$Component){(0,_inherits3.default)(Todo,_React$Component);function Todo(){(0,_classCallCheck3.default)(this,Todo);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}Todo.prototype.toggleCompletion=function toggleCompletion(){var _id=this.props.todo._id;var _props=this.props,dispatch=_props.dispatch,actions=_props.actions;dispatch(actions.updateTodo({_id:_id,completed:this.input.checked}));};Todo.prototype.removeTodo=function removeTodo(){var _id=this.props.todo._id;var _props2=this.props,dispatch=_props2.dispatch,actions=_props2.actions;dispatch(actions.removeTodo({_id:_id}));};Todo.prototype.editTodo=function editTodo(){this.props.router.push('/todo/edit/'+this.props.todo._id);};Todo.prototype.render=function render(){var _this2=this;var _props$todo=this.props.todo,todo=_props$todo.todo,completed=_props$todo.completed;var style={textDecoration:completed?'line-through':null};return _react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,{className:'todo-item'},_react2.default.createElement(_rubix.Col,{sm:8},_react2.default.createElement(_rubix.Checkbox,{onChange:this.toggleCompletion.bind(this),style:style,inputRef:function inputRef(input){_this2.input=input;},checked:completed},todo)),_react2.default.createElement(_rubix.Col,{sm:4,className:'text-right'},_react2.default.createElement(_rubix.Button,{bsStyle:'red',className:'remove-sm',onClick:this.removeTodo.bind(this),style:{marginRight:12.5}},'Remove'),_react2.default.createElement(_rubix.Button,{bsStyle:'green',className:'remove-sm',onlyOnHover:true,onClick:this.editTodo.bind(this)},'Edit'))));};return Todo;}(_react2.default.Component))||_class;exports.default=Todo;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(Todo,'Todo','/Users/joanmi/Projects/rubix-redux-todolist/src/components/Todo.js');}();;
 
 /***/ },
 /* 592 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(265);var _reactDom2=_interopRequireDefault(_reactDom);var _rubix=__webpack_require__(250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var TodoForm=function(_React$Component){(0,_inherits3.default)(TodoForm,_React$Component);function TodoForm(){(0,_classCallCheck3.default)(this,TodoForm);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}TodoForm.prototype.createTodo=function createTodo(e){e.preventDefault();var input=_reactDom2.default.findDOMNode(this.input);var todo=input.value;var _props=this.props,dispatch=_props.dispatch,actions=_props.actions;dispatch(actions.createTodo({todo:todo}));input.value='';};TodoForm.prototype.render=function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Form,{horizontal:true,onSubmit:this.createTodo.bind(this)},_react2.default.createElement(_rubix.FormGroup,null,_react2.default.createElement(_rubix.Col,{sm:10},_react2.default.createElement(_rubix.FormControl,{type:'text',placeholder:'A todo item...',ref:function ref(input){return _this2.input=input;},autoFocus:true})),_react2.default.createElement(_rubix.Col,{sm:2,collapseLeft:true},_react2.default.createElement('br',{className:'visible-xs'}),_react2.default.createElement(_rubix.Button,{type:'submit',bsStyle:'blue',block:true,onlyOnHover:true},'Create Todo')))));};return TodoForm;}(_react2.default.Component);exports.default=TodoForm;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(TodoForm,'TodoForm','/Users/joanmi/Projects/rubix-redux-todolist/src/components/TodoForm.js');}();;
+
+/***/ },
+/* 593 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';exports.__esModule=true;exports.default=undefined;var _classCallCheck2=__webpack_require__(171);var _classCallCheck3=_interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2=__webpack_require__(172);var _possibleConstructorReturn3=_interopRequireDefault(_possibleConstructorReturn2);var _inherits2=__webpack_require__(240);var _inherits3=_interopRequireDefault(_inherits2);var _class,_dec,_class2;var _react=__webpack_require__(10);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(265);var _reactDom2=_interopRequireDefault(_reactDom);var _reactRedux=__webpack_require__(584);var _reactRouter=__webpack_require__(249);var _actions=__webpack_require__(585);var _actions2=_interopRequireDefault(_actions);var _rubix=__webpack_require__(250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var EditTodoForm=(0,_reactRouter.withRouter)(_class=function(_React$Component){(0,_inherits3.default)(EditTodoForm,_React$Component);function EditTodoForm(){(0,_classCallCheck3.default)(this,EditTodoForm);return(0,_possibleConstructorReturn3.default)(this,_React$Component.apply(this,arguments));}EditTodoForm.prototype.editTodo=function editTodo(e){var _this2=this;e.preventDefault();var input=_reactDom2.default.findDOMNode(this.input);var todo=input.value;var completed=this.checkbox.checked;var dispatch=this.props.dispatch;var _id=this.props.todo._id;dispatch(_actions2.default.updateTodo({_id:_id,todo:todo,completed:completed})).then(function(){_this2.props.router.push('/');});};EditTodoForm.prototype.componentWillReceiveProps=function componentWillReceiveProps(newProps){var input=_reactDom2.default.findDOMNode(this.input);input.value=newProps.todo.todo;this.checkbox.checked=newProps.todo.completed;};EditTodoForm.prototype.render=function render(){var _this3=this;var _props$todo=this.props.todo,todo=_props$todo.todo,completed=_props$todo.completed;return _react2.default.createElement('div',null,_react2.default.createElement(_rubix.Form,{onSubmit:this.editTodo.bind(this)},_react2.default.createElement(_rubix.FormGroup,{controlId:'todoText'},_react2.default.createElement(_rubix.ControlLabel,null,'Todo Text'),_react2.default.createElement(_rubix.FormControl,{type:'text',placeholder:'A todo item...',defaultValue:todo,ref:function ref(input){return _this3.input=input;},autoFocus:true})),_react2.default.createElement(_rubix.FormGroup,{controlId:'todoComplete'},_react2.default.createElement(_rubix.Checkbox,{inputRef:function inputRef(checkbox){_this3.checkbox=checkbox;},defaultChecked:completed},'Mark as Completed')),_react2.default.createElement(_rubix.FormGroup,null,_react2.default.createElement(_rubix.Button,{type:'submit',bsStyle:'blue',onlyOnHover:true},'Update Todo'))));};return EditTodoForm;}(_react2.default.Component))||_class;var EditTodo=(_dec=(0,_reactRedux.connect)(function(state){return state;}),_dec(_class2=function(_React$Component2){(0,_inherits3.default)(EditTodo,_React$Component2);function EditTodo(){(0,_classCallCheck3.default)(this,EditTodo);return(0,_possibleConstructorReturn3.default)(this,_React$Component2.apply(this,arguments));}EditTodo.fetchData=function fetchData(store,params){return store.dispatch(_actions2.default.getTodo({_id:params.id}));};EditTodo.prototype.render=function render(){var _props=this.props,todos=_props.todos,dispatch=_props.dispatch;var result=todos.result;return _react2.default.createElement(_rubix.PanelContainer,null,_react2.default.createElement(_rubix.Panel,null,_react2.default.createElement(_rubix.PanelBody,{style:{padding:0,paddingBottom:25}},_react2.default.createElement(_rubix.Grid,null,_react2.default.createElement(_rubix.Row,null,_react2.default.createElement(_rubix.Col,{xs:12},_react2.default.createElement('h3',null,'Editing Todo Item:'),_react2.default.createElement(EditTodoForm,{todo:result,dispatch:dispatch})))))));};return EditTodo;}(_react2.default.Component))||_class2);exports.default=EditTodo;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(EditTodoForm,'EditTodoForm','/Users/joanmi/Projects/rubix-redux-todolist/src/routes/EditTodo.js');__REACT_HOT_LOADER__.register(EditTodo,'EditTodo','/Users/joanmi/Projects/rubix-redux-todolist/src/routes/EditTodo.js');}();;
+
+/***/ },
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47947,35 +47968,35 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _reactRouter = __webpack_require__(249);
 	
-	var _reactHotLoader = __webpack_require__(593);
+	var _reactHotLoader = __webpack_require__(595);
 	
-	var _reactRouterScroll = __webpack_require__(594);
+	var _reactRouterScroll = __webpack_require__(596);
 	
 	var _reactRouterScroll2 = _interopRequireDefault(_reactRouterScroll);
 	
 	var _reactRedux = __webpack_require__(584);
 	
-	var _redux = __webpack_require__(600);
+	var _redux = __webpack_require__(602);
 	
-	var _reactRouterRedux = __webpack_require__(601);
+	var _reactRouterRedux = __webpack_require__(603);
 	
-	var _reduxThunk = __webpack_require__(602);
+	var _reduxThunk = __webpack_require__(604);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reduxFetchData = __webpack_require__(603);
+	var _reduxFetchData = __webpack_require__(605);
 	
-	var _utils = __webpack_require__(604);
+	var _utils = __webpack_require__(606);
 	
-	var _onRouterSetup = __webpack_require__(608);
+	var _onRouterSetup = __webpack_require__(610);
 	
 	var _onRouterSetup2 = _interopRequireDefault(_onRouterSetup);
 	
-	var _onRouterUpdate = __webpack_require__(610);
+	var _onRouterUpdate = __webpack_require__(612);
 	
 	var _onRouterUpdate2 = _interopRequireDefault(_onRouterUpdate);
 	
-	var _checkScroll = __webpack_require__(611);
+	var _checkScroll = __webpack_require__(613);
 	
 	var _checkScroll2 = _interopRequireDefault(_checkScroll);
 	
@@ -48147,13 +48168,13 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 593 */
+/* 595 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-hot-loader");
 
 /***/ },
-/* 594 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48165,7 +48186,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ScrollBehaviorContainer = __webpack_require__(595);
+	var _ScrollBehaviorContainer = __webpack_require__(597);
 	
 	var _ScrollBehaviorContainer2 = _interopRequireDefault(_ScrollBehaviorContainer);
 	
@@ -48188,7 +48209,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = exports['default'];
 
 /***/ },
-/* 595 */
+/* 597 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48199,7 +48220,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ScrollBehavior = __webpack_require__(596);
+	var _ScrollBehavior = __webpack_require__(598);
 	
 	var _ScrollBehavior2 = _interopRequireDefault(_ScrollBehavior);
 	
@@ -48280,7 +48301,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ },
-/* 596 */
+/* 598 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48303,13 +48324,13 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _scrollTop2 = _interopRequireDefault(_scrollTop);
 	
-	var _requestAnimationFrame = __webpack_require__(597);
+	var _requestAnimationFrame = __webpack_require__(599);
 	
 	var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 	
-	var _Actions = __webpack_require__(598);
+	var _Actions = __webpack_require__(600);
 	
-	var _DOMStateStorage = __webpack_require__(599);
+	var _DOMStateStorage = __webpack_require__(601);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -48487,7 +48508,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = exports['default'];
 
 /***/ },
-/* 597 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48538,7 +48559,7 @@ require('source-map-support').install({environment: 'node'});
 	module.exports = compatRaf;
 
 /***/ },
-/* 598 */
+/* 600 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -48565,7 +48586,7 @@ require('source-map-support').install({environment: 'node'});
 	var POP = exports.POP = 'POP';
 
 /***/ },
-/* 599 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48655,25 +48676,25 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ },
-/* 600 */
+/* 602 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux");
 
 /***/ },
-/* 601 */
+/* 603 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-router-redux");
 
 /***/ },
-/* 602 */
+/* 604 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-thunk");
 
 /***/ },
-/* 603 */
+/* 605 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48682,7 +48703,7 @@ require('source-map-support').install({environment: 'node'});
 	  value: true
 	});
 	
-	var _utils = __webpack_require__(604);
+	var _utils = __webpack_require__(606);
 	
 	Object.defineProperty(exports, 'fetchDataOnServer', {
 	  enumerable: true,
@@ -48691,7 +48712,7 @@ require('source-map-support').install({environment: 'node'});
 	  }
 	});
 	
-	var _module = __webpack_require__(605);
+	var _module = __webpack_require__(607);
 	
 	Object.defineProperty(exports, 'reducer', {
 	  enumerable: true,
@@ -48700,7 +48721,7 @@ require('source-map-support').install({environment: 'node'});
 	  }
 	});
 	
-	var _fetchData = __webpack_require__(607);
+	var _fetchData = __webpack_require__(609);
 	
 	Object.defineProperty(exports, 'FetchData', {
 	  enumerable: true,
@@ -48712,7 +48733,7 @@ require('source-map-support').install({environment: 'node'});
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 604 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48729,7 +48750,7 @@ require('source-map-support').install({environment: 'node'});
 	exports.flattenComponents = flattenComponents;
 	exports.fetchDataOnServer = fetchDataOnServer;
 	
-	var _module = __webpack_require__(605);
+	var _module = __webpack_require__(607);
 	
 	/**
 	 *
@@ -48809,7 +48830,7 @@ require('source-map-support').install({environment: 'node'});
 
 
 /***/ },
-/* 605 */
+/* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48823,7 +48844,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	exports.handleDoneFetching = handleDoneFetching;
 	
-	var _reduxActions = __webpack_require__(606);
+	var _reduxActions = __webpack_require__(608);
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
@@ -48840,13 +48861,13 @@ require('source-map-support').install({environment: 'node'});
 	exports.default = reducer;
 
 /***/ },
-/* 606 */
+/* 608 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-actions");
 
 /***/ },
-/* 607 */
+/* 609 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48862,15 +48883,15 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _redux = __webpack_require__(600);
+	var _redux = __webpack_require__(602);
 	
 	var _reactRedux = __webpack_require__(584);
 	
 	var _reactRouter = __webpack_require__(249);
 	
-	var _module = __webpack_require__(605);
+	var _module = __webpack_require__(607);
 	
-	var _utils = __webpack_require__(604);
+	var _utils = __webpack_require__(606);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -48950,7 +48971,7 @@ require('source-map-support').install({environment: 'node'});
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(FetchData);
 
 /***/ },
-/* 608 */
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48964,7 +48985,7 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	__webpack_require__(609);
+	__webpack_require__(611);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49029,7 +49050,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 609 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49256,7 +49277,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 610 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49302,7 +49323,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 611 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49316,11 +49337,11 @@ require('source-map-support').install({environment: 'node'});
 	
 	var _isBrowser2 = _interopRequireDefault(_isBrowser);
 	
-	var _onRouterUpdate = __webpack_require__(610);
+	var _onRouterUpdate = __webpack_require__(612);
 	
 	var _onRouterUpdate2 = _interopRequireDefault(_onRouterUpdate);
 	
-	var _ga = __webpack_require__(612);
+	var _ga = __webpack_require__(614);
 	
 	var _ga2 = _interopRequireDefault(_ga);
 	
@@ -49348,7 +49369,7 @@ require('source-map-support').install({environment: 'node'});
 	}
 
 /***/ },
-/* 612 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49375,7 +49396,7 @@ require('source-map-support').install({environment: 'node'});
 	};
 
 /***/ },
-/* 613 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49425,34 +49446,623 @@ require('source-map-support').install({environment: 'node'});
 	var static_path = 'http://' + hostname + ':' + port;
 
 /***/ },
-/* 614 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(615);var _graphqlRelay=__webpack_require__(616);var greetingsType=new _graphql.GraphQLObjectType({name:'Greetings',fields:function fields(){return{hello:{type:_graphql.GraphQLString,args:{message:{type:_graphql.GraphQLString}},resolve:function resolve(parentValue,_ref){var message=_ref.message;return'received: '+message;}}};}});var queryType=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{greetings:{type:greetingsType,resolve:function resolve(){return"";}}};}});var _default=new _graphql.GraphQLSchema({query:queryType});exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(greetingsType,'greetingsType','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');__REACT_HOT_LOADER__.register(queryType,'queryType','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');}();;
+	'use strict';exports.__esModule=true;var _graphql=__webpack_require__(617);var _database=__webpack_require__(618);var todoType=new _graphql.GraphQLObjectType({name:'Todo',fields:function fields(){return{_id:{type:_graphql.GraphQLString,resolve:function resolve(_ref){var _id=_ref._id;return _id;}},todo:{type:_graphql.GraphQLString,resolve:function resolve(_ref2){var todo=_ref2.todo;return todo;}},completed:{type:_graphql.GraphQLBoolean,resolve:function resolve(_ref3){var completed=_ref3.completed;return completed;}}};}});var queryType=new _graphql.GraphQLObjectType({name:'Query',fields:function fields(){return{todo:{type:todoType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref4){var _id=_ref4._id;return(0,_database.getTodo)(_id);}},todos:{type:new _graphql.GraphQLList(todoType),resolve:function resolve(){return(0,_database.getTodos)();}}};}});var mutationType=new _graphql.GraphQLObjectType({name:'Mutation',fields:function fields(){return{createTodo:{type:todoType,args:{todo:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref5){var todo=_ref5.todo;return(0,_database.createTodo)(todo);}},updateTodo:{type:todoType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)},todo:{type:_graphql.GraphQLString},completed:{type:_graphql.GraphQLBoolean}},resolve:function resolve(_,_ref6){var _id=_ref6._id,todo=_ref6.todo,completed=_ref6.completed;return(0,_database.updateTodo)(_id,todo,completed);}},removeTodo:{type:todoType,args:{_id:{type:new _graphql.GraphQLNonNull(_graphql.GraphQLString)}},resolve:function resolve(_,_ref7){var _id=_ref7._id;return(0,_database.removeTodo)(_id);}}};}});var _default=new _graphql.GraphQLSchema({query:queryType,mutation:mutationType});exports.default=_default;;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(todoType,'todoType','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');__REACT_HOT_LOADER__.register(queryType,'queryType','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');__REACT_HOT_LOADER__.register(mutationType,'mutationType','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');__REACT_HOT_LOADER__.register(_default,'default','/Users/joanmi/Projects/rubix-redux-todolist/data/schema.js');}();;
 
 /***/ },
-/* 615 */
+/* 617 */
 /***/ function(module, exports) {
 
 	module.exports = require("graphql");
 
 /***/ },
-/* 616 */
-/***/ function(module, exports) {
-
-	module.exports = require("graphql-relay");
-
-/***/ },
-/* 617 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';var _extends2=__webpack_require__(252);var _extends3=_interopRequireDefault(_extends2);var _greetings=__webpack_require__(618);var _greetings2=_interopRequireDefault(_greetings);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_greetings2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
-
-/***/ },
 /* 618 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _actionTypes=__webpack_require__(587);function greetings(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[];var action=arguments[1];switch(action.type){case _actionTypes.GET_GREETING:return action.result.data.greetings;default:return state;}}module.exports={greetings:greetings};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(greetings,'greetings','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/reducers/greetings.js');}();;
+	'use strict';exports.__esModule=true;var _promise=__webpack_require__(619);var _promise2=_interopRequireDefault(_promise);exports.getTodo=getTodo;exports.getTodos=getTodos;exports.createTodo=createTodo;exports.removeTodo=removeTodo;exports.updateTodo=updateTodo;var _promisedMongo=__webpack_require__(630);var _promisedMongo2=_interopRequireDefault(_promisedMongo);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var db=(0,_promisedMongo2.default)('reduxtest',['todos']);function getTodo(_id){return db.todos.findOne({_id:_promisedMongo2.default.ObjectId(_id)});}function getTodos(){return db.todos.find({});}function createTodo(todo){if(!todo){return new _promise2.default(function(resolve,reject){reject('"todo" cannot be empty');});}return db.todos.insert({todo:todo,completed:false});}function removeTodo(_id){return db.todos.remove({_id:_promisedMongo2.default.ObjectId(_id)}).then(function(){return{_id:_id};});}function updateTodo(_id,todo,completed){var todoItem={todo:todo,completed:completed};if(!_id)return new _promise2.default(function(resolve,reject){reject('"_id" required to update Todo Item\n');});if(!todo)delete todoItem.todo;if(typeof completed!=='boolean')delete todoItem.completed;return db.todos.findAndModify({new:true,// return the newly modified document
+	query:{_id:_promisedMongo2.default.ObjectId(_id)},update:{$set:todoItem}}).then(function(_ref){var value=_ref.value;return value;});};var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(db,'db','/Users/joanmi/Projects/rubix-redux-todolist/data/database.js');__REACT_HOT_LOADER__.register(getTodo,'getTodo','/Users/joanmi/Projects/rubix-redux-todolist/data/database.js');__REACT_HOT_LOADER__.register(getTodos,'getTodos','/Users/joanmi/Projects/rubix-redux-todolist/data/database.js');__REACT_HOT_LOADER__.register(createTodo,'createTodo','/Users/joanmi/Projects/rubix-redux-todolist/data/database.js');__REACT_HOT_LOADER__.register(removeTodo,'removeTodo','/Users/joanmi/Projects/rubix-redux-todolist/data/database.js');__REACT_HOT_LOADER__.register(updateTodo,'updateTodo','/Users/joanmi/Projects/rubix-redux-todolist/data/database.js');}();;
+
+/***/ },
+/* 619 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(620), __esModule: true };
+
+/***/ },
+/* 620 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(237);
+	__webpack_require__(176);
+	__webpack_require__(219);
+	__webpack_require__(621);
+	module.exports = __webpack_require__(4).Promise;
+
+/***/ },
+/* 621 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var LIBRARY            = __webpack_require__(181)
+	  , global             = __webpack_require__(183)
+	  , ctx                = __webpack_require__(184)
+	  , classof            = __webpack_require__(271)
+	  , $export            = __webpack_require__(182)
+	  , isObject           = __webpack_require__(189)
+	  , aFunction          = __webpack_require__(185)
+	  , anInstance         = __webpack_require__(622)
+	  , forOf              = __webpack_require__(623)
+	  , speciesConstructor = __webpack_require__(624)
+	  , task               = __webpack_require__(625).set
+	  , microtask          = __webpack_require__(627)()
+	  , PROMISE            = 'Promise'
+	  , TypeError          = global.TypeError
+	  , process            = global.process
+	  , $Promise           = global[PROMISE]
+	  , process            = global.process
+	  , isNode             = classof(process) == 'process'
+	  , empty              = function(){ /* empty */ }
+	  , Internal, GenericPromiseCapability, Wrapper;
+	
+	var USE_NATIVE = !!function(){
+	  try {
+	    // correct subclassing with @@species support
+	    var promise     = $Promise.resolve(1)
+	      , FakePromise = (promise.constructor = {})[__webpack_require__(216)('species')] = function(exec){ exec(empty, empty); };
+	    // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
+	    return (isNode || typeof PromiseRejectionEvent == 'function') && promise.then(empty) instanceof FakePromise;
+	  } catch(e){ /* empty */ }
+	}();
+	
+	// helpers
+	var sameConstructor = function(a, b){
+	  // with library wrapper special case
+	  return a === b || a === $Promise && b === Wrapper;
+	};
+	var isThenable = function(it){
+	  var then;
+	  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
+	};
+	var newPromiseCapability = function(C){
+	  return sameConstructor($Promise, C)
+	    ? new PromiseCapability(C)
+	    : new GenericPromiseCapability(C);
+	};
+	var PromiseCapability = GenericPromiseCapability = function(C){
+	  var resolve, reject;
+	  this.promise = new C(function($$resolve, $$reject){
+	    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
+	    resolve = $$resolve;
+	    reject  = $$reject;
+	  });
+	  this.resolve = aFunction(resolve);
+	  this.reject  = aFunction(reject);
+	};
+	var perform = function(exec){
+	  try {
+	    exec();
+	  } catch(e){
+	    return {error: e};
+	  }
+	};
+	var notify = function(promise, isReject){
+	  if(promise._n)return;
+	  promise._n = true;
+	  var chain = promise._c;
+	  microtask(function(){
+	    var value = promise._v
+	      , ok    = promise._s == 1
+	      , i     = 0;
+	    var run = function(reaction){
+	      var handler = ok ? reaction.ok : reaction.fail
+	        , resolve = reaction.resolve
+	        , reject  = reaction.reject
+	        , domain  = reaction.domain
+	        , result, then;
+	      try {
+	        if(handler){
+	          if(!ok){
+	            if(promise._h == 2)onHandleUnhandled(promise);
+	            promise._h = 1;
+	          }
+	          if(handler === true)result = value;
+	          else {
+	            if(domain)domain.enter();
+	            result = handler(value);
+	            if(domain)domain.exit();
+	          }
+	          if(result === reaction.promise){
+	            reject(TypeError('Promise-chain cycle'));
+	          } else if(then = isThenable(result)){
+	            then.call(result, resolve, reject);
+	          } else resolve(result);
+	        } else reject(value);
+	      } catch(e){
+	        reject(e);
+	      }
+	    };
+	    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+	    promise._c = [];
+	    promise._n = false;
+	    if(isReject && !promise._h)onUnhandled(promise);
+	  });
+	};
+	var onUnhandled = function(promise){
+	  task.call(global, function(){
+	    var value = promise._v
+	      , abrupt, handler, console;
+	    if(isUnhandled(promise)){
+	      abrupt = perform(function(){
+	        if(isNode){
+	          process.emit('unhandledRejection', value, promise);
+	        } else if(handler = global.onunhandledrejection){
+	          handler({promise: promise, reason: value});
+	        } else if((console = global.console) && console.error){
+	          console.error('Unhandled promise rejection', value);
+	        }
+	      });
+	      // Browsers should not trigger `rejectionHandled` event if it was handled here, NodeJS - should
+	      promise._h = isNode || isUnhandled(promise) ? 2 : 1;
+	    } promise._a = undefined;
+	    if(abrupt)throw abrupt.error;
+	  });
+	};
+	var isUnhandled = function(promise){
+	  if(promise._h == 1)return false;
+	  var chain = promise._a || promise._c
+	    , i     = 0
+	    , reaction;
+	  while(chain.length > i){
+	    reaction = chain[i++];
+	    if(reaction.fail || !isUnhandled(reaction.promise))return false;
+	  } return true;
+	};
+	var onHandleUnhandled = function(promise){
+	  task.call(global, function(){
+	    var handler;
+	    if(isNode){
+	      process.emit('rejectionHandled', promise);
+	    } else if(handler = global.onrejectionhandled){
+	      handler({promise: promise, reason: promise._v});
+	    }
+	  });
+	};
+	var $reject = function(value){
+	  var promise = this;
+	  if(promise._d)return;
+	  promise._d = true;
+	  promise = promise._w || promise; // unwrap
+	  promise._v = value;
+	  promise._s = 2;
+	  if(!promise._a)promise._a = promise._c.slice();
+	  notify(promise, true);
+	};
+	var $resolve = function(value){
+	  var promise = this
+	    , then;
+	  if(promise._d)return;
+	  promise._d = true;
+	  promise = promise._w || promise; // unwrap
+	  try {
+	    if(promise === value)throw TypeError("Promise can't be resolved itself");
+	    if(then = isThenable(value)){
+	      microtask(function(){
+	        var wrapper = {_w: promise, _d: false}; // wrap
+	        try {
+	          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
+	        } catch(e){
+	          $reject.call(wrapper, e);
+	        }
+	      });
+	    } else {
+	      promise._v = value;
+	      promise._s = 1;
+	      notify(promise, false);
+	    }
+	  } catch(e){
+	    $reject.call({_w: promise, _d: false}, e); // wrap
+	  }
+	};
+	
+	// constructor polyfill
+	if(!USE_NATIVE){
+	  // 25.4.3.1 Promise(executor)
+	  $Promise = function Promise(executor){
+	    anInstance(this, $Promise, PROMISE, '_h');
+	    aFunction(executor);
+	    Internal.call(this);
+	    try {
+	      executor(ctx($resolve, this, 1), ctx($reject, this, 1));
+	    } catch(err){
+	      $reject.call(this, err);
+	    }
+	  };
+	  Internal = function Promise(executor){
+	    this._c = [];             // <- awaiting reactions
+	    this._a = undefined;      // <- checked in isUnhandled reactions
+	    this._s = 0;              // <- state
+	    this._d = false;          // <- done
+	    this._v = undefined;      // <- value
+	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
+	    this._n = false;          // <- notify
+	  };
+	  Internal.prototype = __webpack_require__(628)($Promise.prototype, {
+	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
+	    then: function then(onFulfilled, onRejected){
+	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
+	      reaction.ok     = typeof onFulfilled == 'function' ? onFulfilled : true;
+	      reaction.fail   = typeof onRejected == 'function' && onRejected;
+	      reaction.domain = isNode ? process.domain : undefined;
+	      this._c.push(reaction);
+	      if(this._a)this._a.push(reaction);
+	      if(this._s)notify(this, false);
+	      return reaction.promise;
+	    },
+	    // 25.4.5.1 Promise.prototype.catch(onRejected)
+	    'catch': function(onRejected){
+	      return this.then(undefined, onRejected);
+	    }
+	  });
+	  PromiseCapability = function(){
+	    var promise  = new Internal;
+	    this.promise = promise;
+	    this.resolve = ctx($resolve, promise, 1);
+	    this.reject  = ctx($reject, promise, 1);
+	  };
+	}
+	
+	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
+	__webpack_require__(215)($Promise, PROMISE);
+	__webpack_require__(629)(PROMISE);
+	Wrapper = __webpack_require__(4)[PROMISE];
+	
+	// statics
+	$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
+	  // 25.4.4.5 Promise.reject(r)
+	  reject: function reject(r){
+	    var capability = newPromiseCapability(this)
+	      , $$reject   = capability.reject;
+	    $$reject(r);
+	    return capability.promise;
+	  }
+	});
+	$export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
+	  // 25.4.4.6 Promise.resolve(x)
+	  resolve: function resolve(x){
+	    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
+	    if(x instanceof $Promise && sameConstructor(x.constructor, this))return x;
+	    var capability = newPromiseCapability(this)
+	      , $$resolve  = capability.resolve;
+	    $$resolve(x);
+	    return capability.promise;
+	  }
+	});
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(313)(function(iter){
+	  $Promise.all(iter)['catch'](empty);
+	})), PROMISE, {
+	  // 25.4.4.1 Promise.all(iterable)
+	  all: function all(iterable){
+	    var C          = this
+	      , capability = newPromiseCapability(C)
+	      , resolve    = capability.resolve
+	      , reject     = capability.reject;
+	    var abrupt = perform(function(){
+	      var values    = []
+	        , index     = 0
+	        , remaining = 1;
+	      forOf(iterable, false, function(promise){
+	        var $index        = index++
+	          , alreadyCalled = false;
+	        values.push(undefined);
+	        remaining++;
+	        C.resolve(promise).then(function(value){
+	          if(alreadyCalled)return;
+	          alreadyCalled  = true;
+	          values[$index] = value;
+	          --remaining || resolve(values);
+	        }, reject);
+	      });
+	      --remaining || resolve(values);
+	    });
+	    if(abrupt)reject(abrupt.error);
+	    return capability.promise;
+	  },
+	  // 25.4.4.4 Promise.race(iterable)
+	  race: function race(iterable){
+	    var C          = this
+	      , capability = newPromiseCapability(C)
+	      , reject     = capability.reject;
+	    var abrupt = perform(function(){
+	      forOf(iterable, false, function(promise){
+	        C.resolve(promise).then(capability.resolve, reject);
+	      });
+	    });
+	    if(abrupt)reject(abrupt.error);
+	    return capability.promise;
+	  }
+	});
+
+/***/ },
+/* 622 */
+/***/ function(module, exports) {
+
+	module.exports = function(it, Constructor, name, forbiddenField){
+	  if(!(it instanceof Constructor) || (forbiddenField !== undefined && forbiddenField in it)){
+	    throw TypeError(name + ': incorrect invocation!');
+	  } return it;
+	};
+
+/***/ },
+/* 623 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx         = __webpack_require__(184)
+	  , call        = __webpack_require__(310)
+	  , isArrayIter = __webpack_require__(311)
+	  , anObject    = __webpack_require__(188)
+	  , toLength    = __webpack_require__(208)
+	  , getIterFn   = __webpack_require__(275)
+	  , BREAK       = {}
+	  , RETURN      = {};
+	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
+	  var iterFn = ITERATOR ? function(){ return iterable; } : getIterFn(iterable)
+	    , f      = ctx(fn, that, entries ? 2 : 1)
+	    , index  = 0
+	    , length, step, iterator, result;
+	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
+	  // fast case for arrays with default iterator
+	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
+	    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+	    if(result === BREAK || result === RETURN)return result;
+	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
+	    result = call(iterator, f, step.value, entries);
+	    if(result === BREAK || result === RETURN)return result;
+	  }
+	};
+	exports.BREAK  = BREAK;
+	exports.RETURN = RETURN;
+
+/***/ },
+/* 624 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+	var anObject  = __webpack_require__(188)
+	  , aFunction = __webpack_require__(185)
+	  , SPECIES   = __webpack_require__(216)('species');
+	module.exports = function(O, D){
+	  var C = anObject(O).constructor, S;
+	  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
+	};
+
+/***/ },
+/* 625 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx                = __webpack_require__(184)
+	  , invoke             = __webpack_require__(626)
+	  , html               = __webpack_require__(214)
+	  , cel                = __webpack_require__(193)
+	  , global             = __webpack_require__(183)
+	  , process            = global.process
+	  , setTask            = global.setImmediate
+	  , clearTask          = global.clearImmediate
+	  , MessageChannel     = global.MessageChannel
+	  , counter            = 0
+	  , queue              = {}
+	  , ONREADYSTATECHANGE = 'onreadystatechange'
+	  , defer, channel, port;
+	var run = function(){
+	  var id = +this;
+	  if(queue.hasOwnProperty(id)){
+	    var fn = queue[id];
+	    delete queue[id];
+	    fn();
+	  }
+	};
+	var listener = function(event){
+	  run.call(event.data);
+	};
+	// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
+	if(!setTask || !clearTask){
+	  setTask = function setImmediate(fn){
+	    var args = [], i = 1;
+	    while(arguments.length > i)args.push(arguments[i++]);
+	    queue[++counter] = function(){
+	      invoke(typeof fn == 'function' ? fn : Function(fn), args);
+	    };
+	    defer(counter);
+	    return counter;
+	  };
+	  clearTask = function clearImmediate(id){
+	    delete queue[id];
+	  };
+	  // Node.js 0.8-
+	  if(__webpack_require__(206)(process) == 'process'){
+	    defer = function(id){
+	      process.nextTick(ctx(run, id, 1));
+	    };
+	  // Browsers with MessageChannel, includes WebWorkers
+	  } else if(MessageChannel){
+	    channel = new MessageChannel;
+	    port    = channel.port2;
+	    channel.port1.onmessage = listener;
+	    defer = ctx(port.postMessage, port, 1);
+	  // Browsers with postMessage, skip WebWorkers
+	  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
+	  } else if(global.addEventListener && typeof postMessage == 'function' && !global.importScripts){
+	    defer = function(id){
+	      global.postMessage(id + '', '*');
+	    };
+	    global.addEventListener('message', listener, false);
+	  // IE8-
+	  } else if(ONREADYSTATECHANGE in cel('script')){
+	    defer = function(id){
+	      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function(){
+	        html.removeChild(this);
+	        run.call(id);
+	      };
+	    };
+	  // Rest old browsers
+	  } else {
+	    defer = function(id){
+	      setTimeout(ctx(run, id, 1), 0);
+	    };
+	  }
+	}
+	module.exports = {
+	  set:   setTask,
+	  clear: clearTask
+	};
+
+/***/ },
+/* 626 */
+/***/ function(module, exports) {
+
+	// fast apply, http://jsperf.lnkit.com/fast-apply/5
+	module.exports = function(fn, args, that){
+	  var un = that === undefined;
+	  switch(args.length){
+	    case 0: return un ? fn()
+	                      : fn.call(that);
+	    case 1: return un ? fn(args[0])
+	                      : fn.call(that, args[0]);
+	    case 2: return un ? fn(args[0], args[1])
+	                      : fn.call(that, args[0], args[1]);
+	    case 3: return un ? fn(args[0], args[1], args[2])
+	                      : fn.call(that, args[0], args[1], args[2]);
+	    case 4: return un ? fn(args[0], args[1], args[2], args[3])
+	                      : fn.call(that, args[0], args[1], args[2], args[3]);
+	  } return              fn.apply(that, args);
+	};
+
+/***/ },
+/* 627 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(183)
+	  , macrotask = __webpack_require__(625).set
+	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
+	  , process   = global.process
+	  , Promise   = global.Promise
+	  , isNode    = __webpack_require__(206)(process) == 'process';
+	
+	module.exports = function(){
+	  var head, last, notify;
+	
+	  var flush = function(){
+	    var parent, fn;
+	    if(isNode && (parent = process.domain))parent.exit();
+	    while(head){
+	      fn   = head.fn;
+	      head = head.next;
+	      try {
+	        fn();
+	      } catch(e){
+	        if(head)notify();
+	        else last = undefined;
+	        throw e;
+	      }
+	    } last = undefined;
+	    if(parent)parent.enter();
+	  };
+	
+	  // Node.js
+	  if(isNode){
+	    notify = function(){
+	      process.nextTick(flush);
+	    };
+	  // browsers with MutationObserver
+	  } else if(Observer){
+	    var toggle = true
+	      , node   = document.createTextNode('');
+	    new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
+	    notify = function(){
+	      node.data = toggle = !toggle;
+	    };
+	  // environments with maybe non-completely correct, but existent Promise
+	  } else if(Promise && Promise.resolve){
+	    var promise = Promise.resolve();
+	    notify = function(){
+	      promise.then(flush);
+	    };
+	  // for other environments - macrotask based on:
+	  // - setImmediate
+	  // - MessageChannel
+	  // - window.postMessag
+	  // - onreadystatechange
+	  // - setTimeout
+	  } else {
+	    notify = function(){
+	      // strange IE + webpack dev server bug - use .call(global)
+	      macrotask.call(global, flush);
+	    };
+	  }
+	
+	  return function(fn){
+	    var task = {fn: fn, next: undefined};
+	    if(last)last.next = task;
+	    if(!head){
+	      head = task;
+	      notify();
+	    } last = task;
+	  };
+	};
+
+/***/ },
+/* 628 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var hide = __webpack_require__(186);
+	module.exports = function(target, src, safe){
+	  for(var key in src){
+	    if(safe && target[key])target[key] = src[key];
+	    else hide(target, key, src[key]);
+	  } return target;
+	};
+
+/***/ },
+/* 629 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var global      = __webpack_require__(183)
+	  , core        = __webpack_require__(4)
+	  , dP          = __webpack_require__(187)
+	  , DESCRIPTORS = __webpack_require__(191)
+	  , SPECIES     = __webpack_require__(216)('species');
+	
+	module.exports = function(KEY){
+	  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
+	  if(DESCRIPTORS && C && !C[SPECIES])dP.f(C, SPECIES, {
+	    configurable: true,
+	    get: function(){ return this; }
+	  });
+	};
+
+/***/ },
+/* 630 */
+/***/ function(module, exports) {
+
+	module.exports = require("promised-mongo");
+
+/***/ },
+/* 631 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _extends2=__webpack_require__(252);var _extends3=_interopRequireDefault(_extends2);var _todos=__webpack_require__(632);var _todos2=_interopRequireDefault(_todos);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=(0,_extends3.default)({},_todos2.default);;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}}();;
+
+/***/ },
+/* 632 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _assign=__webpack_require__(253);var _assign2=_interopRequireDefault(_assign);var _actionTypes=__webpack_require__(587);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function getIndexOfTodoItem(action,state){var index=-1,data=action.result;for(var i=0;i<state.result.length;i++){if(state.result[i]._id===data._id){index=i;break;}}return index;}function todos(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[];var action=arguments[1];if(action.error){return{result:state.result,error:action.error};}switch(action.type){case _actionTypes.SINGLE_TODO:case _actionTypes.ALL_TODOS:return{result:action.result};case _actionTypes.CREATE_TODO:return{result:[].concat(state.result,[action.result])};case _actionTypes.EDIT_TODO:var index=getIndexOfTodoItem(action,state);// todo item not found in state object so return original state
+	if(index===-1)return state;// todo item found! return new state
+	return{result:[].concat(state.result.slice(0,index),[(0,_assign2.default)({},state.result[index],action.result)],state.result.slice(index+1))};case _actionTypes.REMOVE_TODO:var index=getIndexOfTodoItem(action,state);// todo item not found in state object so return original state
+	if(index===-1)return state;// todo item found! don't include it in the new state
+	return{result:[].concat(state.result.slice(0,index),state.result.slice(index+1))};default:return state;}}module.exports={todos:todos};;var _temp=function(){if(typeof __REACT_HOT_LOADER__==='undefined'){return;}__REACT_HOT_LOADER__.register(getIndexOfTodoItem,'getIndexOfTodoItem','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/reducers/todos.js');__REACT_HOT_LOADER__.register(todos,'todos','/Users/joanmi/Projects/rubix-redux-todolist/src/redux/reducers/todos.js');}();;
 
 /***/ }
 /******/ ]);

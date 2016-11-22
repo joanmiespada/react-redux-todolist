@@ -1,4 +1,4 @@
-import {
+/*import {
   GET_GREETING
 } from '../actions/actionTypes';
 
@@ -14,3 +14,4 @@ function greetings(state = [], action) {
 module.exports = {
   greetings,
 };
+*/
